@@ -1,7 +1,15 @@
 export class requestsService {
-  private requests = ["test 1", "test 2"]
+  private requests = ['request 1', 'request 2'];
 
-  getRequests () {
-    return [...this.requests]
+  addRequest(requestName: string) {
+    this.requests.push(requestName);
+  }
+
+  resolveRequest(requestName: string) {
+    this.requests = this.requests.filter((req) => req !== requestName);
+  }
+
+  getRequests() {
+    return [...this.requests];
   }
 }
